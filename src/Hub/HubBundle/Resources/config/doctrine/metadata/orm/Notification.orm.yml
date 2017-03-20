@@ -1,0 +1,47 @@
+Notification:
+    type: entity
+    table: notification
+    indexes:
+        FKNotificati360234:
+            columns:
+                - userEmitter
+    id:
+        idnotification:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idNotification
+            generator:
+                strategy: IDENTITY
+    fields:
+        userreceiver:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: userReceiver
+        message:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        isread:
+            type: boolean
+            nullable: false
+            column: isRead
+    manyToOne:
+        useremitter:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                userEmitter:
+                    referencedColumnName: user
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

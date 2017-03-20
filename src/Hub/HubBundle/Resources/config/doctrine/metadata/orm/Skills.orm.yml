@@ -1,0 +1,36 @@
+Skills:
+    type: entity
+    table: skills
+    indexes:
+        FKSkills100419:
+            columns:
+                - user
+    id:
+        idskills:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idSkills
+            generator:
+                strategy: IDENTITY
+    fields:
+        skill:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    manyToOne:
+        user:
+            targetEntity: Professional
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user:
+                    referencedColumnName: user
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

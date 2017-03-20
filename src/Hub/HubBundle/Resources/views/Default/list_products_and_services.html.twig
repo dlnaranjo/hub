@@ -1,0 +1,255 @@
+{# empty Twig template #}
+
+{% extends 'head_Template.html.twig' %}
+
+{% block color %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        {% if app.user.roles[0] == "ROLE_BUSINESS"  %}
+           <link href="{{asset('bundles/hub/css/skins/pink.css')}}" rel="stylesheet">
+        {% elseif app.user.roles[0] == "ROLE_PROFESSIONAL"  %}
+            <link href="{{asset('bundles/hub/css/skins/orange.css')}}" rel="stylesheet">
+        {% elseif app.user.roles[0] == "ROLE_USER" %}   
+            <link href="{{asset('bundles/hub/css/skins/blue.css')}}" rel="stylesheet">
+        {% else %}
+            <link href="{{asset('bundles/hub/css/skins/red.css')}}" rel="stylesheet">
+        {% endif %}    
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+			<!-- banner start -->
+			<!-- ================ -->
+			<div class="banner shop-banner">
+
+				<!-- slideshow start -->
+				<!-- ================ -->
+				<div class="slideshow white-bg">
+					
+					<!-- slider revolution start -->
+					<!-- ================ -->
+					<div class="slider-banner-container">
+						<div class="slider-banner">
+							<ul>
+								<!-- slide 1 start -->
+								<li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on" data-title="Slide 1">
+								
+								<!-- main image -->
+								<img src="{{asset('bundles/hub/images/slider-shop-slide-1.jpg')}}"  alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+								<!-- Translucent background -->
+								<div class="tp-caption light-translucent-bg"
+									data-x="center"
+									data-y="bottom"
+									data-speed="800"
+									data-start="0"
+									style="background-color:rgba(255,255,255,0.4);">
+								</div>
+
+								<!-- LAYER NR. 1 -->
+								<div class="tp-caption very_large_text hidden-sm black sfl tp-resizeme"
+									data-x="center"
+									data-y="150" 
+									data-speed="200"
+									data-start="0"
+									data-end="10000"
+									data-endspeed="200"
+									data-splitin="chars"
+									data-elementdelay="0.07"
+									data-endelementdelay="0.1"
+									data-splitout="chars">Up To 50% Sales
+								</div>
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption tp-resizeme hidden-sm sfb"
+									data-x="center"
+									data-y="230" 
+									data-speed="700"
+									data-start="600"
+									data-end="10000"
+									data-endspeed="600"><a href="page-services.html" class="btn btn-dark">Offers <i class="fa fa-angle-right pl-10"></i></a>
+								</div>
+
+								</li>
+								<!-- slide 1 end -->
+
+								<!-- slide 2 start -->
+								<li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on" data-title="Slide 2">
+								
+								<!-- main image -->
+								<img src="{{asset('bundles/hub/images/slider-shop-slide-2.jpg')}}"  alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+								<!-- Translucent background -->
+								<div class="tp-caption light-translucent-bg"
+									data-x="center"
+									data-y="bottom"
+									data-speed="800"
+									data-start="0"
+									style="background-color:rgba(255,255,255,0.4);">
+								</div>
+
+								<!-- LAYER NR. 1 -->
+								<div class="tp-caption very_large_text hidden-sm sft black tp-resizeme"
+									data-x="center"
+									data-y="150" 
+									data-speed="700"
+									data-start="200"
+									data-end="10000"
+									data-endspeed="600">Special Offers
+								</div>
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption tp-resizeme hidden-sm sfb"
+									data-x="center"
+									data-y="230" 
+									data-speed="700"
+									data-start="600"
+									data-end="10000"
+									data-endspeed="600"><a href="page-services.html" class="btn btn-dark">Learn More <i class="fa fa-angle-right pl-10"></i></a>
+								</div>
+
+								</li>
+								<!-- slide 2 end -->
+
+							</ul>
+						</div>
+					</div>
+					<!-- slider revolution end -->
+
+				</div>
+				<!-- slideshow end -->
+
+				<div class="sorting-filters">
+					<div class="container">
+						<form class="form-inline">
+							<div class="form-group">
+								<label>Main Category</label>
+								<select class="form-control">
+									<option selected="selected">Automotive</option>
+									<option>Business Support & Supplies</option>
+									<option>Computer & Electronics</option>
+                                 <option>Construction & Contractor</option>
+                                 <option>Education</option>
+                                 <option>Entertainment</option>
+                                 <option>Food & Dinning</option>
+                                  <option>Health & Medicine</option>
+                                   <option>Home & Garden</option>
+                                    <option>Legal & Financial</option>
+                                     <option>Manufaturing,Whole Sale, Distribution</option>
+                                      <option>Merchants(Retail)</option>
+                                       <option>Miscellaneous</option>
+                                        <option>Personal Care & Services</option>
+                                         <option>Real Estates</option>
+                                          <option>Travel & Transport</option>
+                                         
+
+
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Sub-Category</label>
+								<select class="form-control">
+									<option selected="selected">Auto Accesssories</option>
+									<option>Auto Dealers- New</option>
+                                    <option>Auto Dealers - Used</option>
+                                    <option>Details & CarWash</option>
+                                    <option>Gas Stations</option>
+                                    <option>Motorcycle Sales & Repairs</option>
+                                    <option>Rentals & Leasing</option>
+                                    <option>Service, Repair & Parts</option>
+                                    <option>Towing</option>
+                                    <option>Body Works</option>
+                                    <option>Painting</option>
+								</select> 
+							</div>
+							<div class="form-group">
+								<label>By Name</label>
+								<div class="row grid-space-10">
+									<div class="col-sm-6">
+										<input type="text" class="form-control">
+									</div>
+									<div class="col-sm-6">
+										<input type="text" class="form-control col-xs-6">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Sort By</label>
+								<select class="form-control">
+									<option selected="selected">Name</option>
+									<option>Type</option>
+									<option>Location</option>
+									<option>Rating High</option>
+									<option>Ratting Low</option>
+									<option>A-Z</option>
+                                 <option>Z-A</option>
+								</select> 
+							</div>
+							<div class="form-group">
+								<a href="#" class="btn btn-default">Search</a>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+			<!-- banner end -->
+
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container">
+
+				<div class="container">
+					<div class="row">
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="main col-md-12">
+
+							<!-- page-title start -->
+							<!-- ================ -->
+							<h1 class="page-title">Products and Services</h1>
+							<div class="separator-2"></div>
+							<p class="lead">Products and services in yours hands <br class="hidden-sm hidden-xs"></p>
+							<!-- page-title end -->
+							
+							<!-- shop items start -->
+                                                       
+
+							<div class="masonry-grid-fitrows row grid-space-20">
+                                                            {% for p in pands %}
+								<div class="col-md-3 col-sm-6 masonry-grid-item">
+									<div class="listing-item">
+										<div class="overlay-container">
+											<img src="{{asset("bundles/hub/perfil/" ~ p.getPhoto() )}}" alt="">
+											<a href="" class="overlay small">
+												<i class="fa fa-plus"></i>
+												<span>View Details</span>
+											</a>
+										</div>
+										<div class="listing-item-body clearfix">
+											<h3 class="title"><a href="">{{p.getName()}}</a></h3>
+											<p>{{p.getDescription()}}</p>
+											<span class="price">Status</span>
+											<div class="elements-list pull-right">
+												<i class="fa fa-signal"></i>
+												<a href=""><i class="fa fa-eye pr-10"></i>Take a look</a>
+											</div>
+										</div>
+									</div>
+                                                                </div>
+                                                                {% endfor %}
+							<!-- shop items end -->
+							
+							<div class="clearfix"></div>
+
+						</div>
+						<!-- main end -->
+
+					</div>
+				</div>
+			</section>
+			<!-- main-container end -->
+
+{% endblock%}
+

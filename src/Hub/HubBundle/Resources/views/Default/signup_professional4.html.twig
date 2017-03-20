@@ -1,0 +1,87 @@
+{% extends 'head_Template.html.twig' %}
+
+{% block color %}
+    <link href="{{asset('bundles/hub/css/skins/orange.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <!-- body classes: 
+                    "boxed": boxed layout mode e.g. <body class="boxed">
+                    "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+    -->
+    <body class="no-trans">
+
+        <!-- background image -->
+        <!--<div class="fullscreen-bg-professional"></div>
+
+        <!-- page wrapper start -->
+        <!-- ================ -->
+        <div class="page-wrapper">
+
+            <!-- main-container start -->
+            <!-- ================ -->
+            <section class="main-container">
+
+                <div class="container">
+                    <div class="row">
+
+                        <!-- main start -->
+                        <!-- ================ -->
+                        <div class="  col-md-8 col-md-offset-2">
+
+                            <div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+                                <div class="center-block">
+                                    <h2 class="title">Professional Sign Up</h2>
+                                    <hr>
+                                    <form id="formSkill"  class="form-horizontal" role="form" method="post" action="{{path('hub_signup_professional_finish')}}">
+
+
+                                        <div class="form-group has-feedback">
+                                            <label for="inputAddSkill"data-animation-effect="fadeInLeft" data-effect-delay="100" class="col-sm-3 control-label">Skill <span class="text-danger small"></span></label>
+                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="100">
+                                                <input type="text"  style="border-color: #f99d30" class="form-control" id="inputAddSkill" placeholder="Add new Skill">
+                                                <i class="fa fa-pencil form-control-feedback" style="color: #f99d30 "></i>
+                                                <button type="button" onclick="addSkill();" class="btn btn-default  btn-sm">Add Skill<i class="fa fa-floppy-o pl-10"></i></button>
+
+                                            </div>
+                                        </div>      
+                                        <div class="form-group has-feedback">
+                                            <label for="inputSkills"data-animation-effect="fadeInLeft" data-effect-delay="150" class="col-sm-3 control-label">Skills <span class="text-danger small"></span></label>
+                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="150">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 80%">Skill</th>
+                                                            <th style="width: 20%">Delete</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbody">
+
+                                                    </tbody>
+                                                </table> 
+
+                                            </div>
+                                        </div> 
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-8">
+                                                <button type="submit" class="btn btn-default">Finish</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- main end -->
+
+                    </div>
+                </div>
+
+            </section>
+            <!-- main-container end -->
+
+        </div>
+        <!-- page-wrapper end -->
+    </body>
+{% endblock %}

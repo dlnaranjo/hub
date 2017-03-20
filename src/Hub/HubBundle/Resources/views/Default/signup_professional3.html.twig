@@ -1,0 +1,97 @@
+{% extends 'head_Template.html.twig' %}
+
+{% block color %}
+     <link href="{{asset('bundles/hub/css/skins/orange.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+	<!-- body classes: 
+			"boxed": boxed layout mode e.g. <body class="boxed">
+			"pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+	-->
+	<body class="no-trans">
+
+		<!-- background image -->
+		
+		<!-- page wrapper start -->
+		<!-- ================ -->
+		<div class="page-wrapper">
+
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container">
+				
+				<div class="container">
+					<div class="row">
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="  col-md-8 col-md-offset-2">
+                                                   
+							<div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+								<div class="center-block">
+									<h2 class="title">Professional Sign Up</h2>
+									<hr>
+                                                                        <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data"  action="{{path('hub_signup_professional4')}}">
+									
+                                                                        <div class="form-group has-feedback">
+                                                                            <label for="inputPresentation" data-animation-effect="fadeInLeft" data-effect-delay="150" class="col-sm-3 control-label">Presentation <span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="150">
+                                                                                    <textarea class="form-control"  rows="3" style="border-color: #f99d30"  name="presentation"  placeholder="Write your presentation for others users" required></textarea>
+                                                                                    <i class="fa fa-pencil form-control-feedback" style="color: #f99d30 "></i>
+                                                                            </div>
+                                                                        </div>
+                                                                            
+                                                                        <div class="form-group has-feedback">
+                                                                            <label for="inputCurriculum" data-animation-effect="fadeInLeft" data-effect-delay="200" class="col-sm-3 control-label">Curriculum<span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="200">                                                                               
+                                                                                <input type="file"  name="cv"   id="inputCurriculum">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group has-feedback">
+                                                                            <label for="inputExperience"data-animation-effect="fadeInLeft" data-effect-delay="200" class="col-sm-3 control-label">Experience <span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="200">
+                                                                                    <input type="text"  style="border-color: #f99d30" class="form-control" id="inputExperience"  name="experience"  placeholder="Years of experience" required>
+                                                                                    <i class="fa fa-pencil form-control-feedback" style="color: #f99d30 "></i>
+                                                                            </div>
+                                                                        </div>
+                                                                         <div class="form-group has-feedback">
+                                                                            <label for="inputLanguage"data-animation-effect="fadeInLeft" data-effect-delay="250" class="col-sm-3 control-label">Language <span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="250">
+                                                                            <select style="border-color: #f99d30" class="form-control" id="inputLanguage" name="language"  placeholder="Language" required>
+                                                                                    <option>--Select the language that you prefer--</option>    
+                                                                                    <option>English</option>
+                                                                                    <option>Español</option>
+                                                                                    <option>Deutcsh</option>
+                                                                                    <option>Français</option>
+                                                                                    <option>Italiano</option>
+                                                                                    <option>Português</option>
+                                                                                    <option>Polski</option>
+                                                                                    <option>Afrikaans</option>
+                                                                                    
+                                                                            </select>
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="form-group">
+                                                                                <div class="col-sm-offset-3 col-sm-8">
+                                                                                    <button type="submit" class="btn btn-default">Next</button>
+                                                                                </div>
+                                                                        </div>
+									</form>
+								</div>
+							</div>
+
+						</div>
+						<!-- main end -->
+
+					</div>
+				</div>
+
+			</section>
+			<!-- main-container end -->
+
+		</div>
+		<!-- page-wrapper end -->
+	</body>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'head_Template.html.twig' %}
+
+{% block color %}
+    <link href="{{asset('bundles/hub/css/skins/pink.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <!-- body classes: 
+                    "boxed": boxed layout mode e.g. <body class="boxed">
+                    "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+    -->
+    <body class="no-trans">
+
+        <!-- background image -->
+
+
+        <!-- page wrapper start -->
+        <!-- ================ -->
+        <div class="page-wrapper">
+
+            <!-- main-container start -->
+            <!-- ================ -->
+            <section class="main-container">
+
+                <div class="container">
+                    <div class="row">
+
+                        <!-- main start -->
+                        <!-- ================ -->
+                        <div class="  col-md-8 col-md-offset-2">
+                            <div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+                                <div class="center-block">
+                                    <h2 class="title">Business Sign Up</h2>
+                                    <hr>
+                                    <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data"  action="{{path('hub_signup_business_finish')}}">
+                                        <div class="form-group has-feedback">
+                                            <label for="inputPhoto" data-animation-effect="fadeInLeft" data-effect-delay="200" class="col-sm-3 control-label">Photo<span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="200">
+                                                <img id="photoPerfil" style="width: 150px; height: 100px; display: inline" src="{{asset('bundles/hub/images/gallery-1.jpg')}}"></a>  
+
+                                                <input type="file"  style="display: inline" onchange="ShowPhoto();" name="photo"  id="inputPhoto">
+                                                <button type="button" onclick="addPhoto();" class="btn btn-default  btn-sm">Add Photo<i class="fa fa-floppy-o pl-10"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <label for="inputPhoto" data-animation-effect="fadeInLeft" data-effect-delay="200" class="col-sm-3 control-label">Photos<span class="text-danger small"></span></label>
+                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="200">
+                                                <div class="footer-content">                                                                                        
+                                                    <div class="gallery row">
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-1.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-2.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-3.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-4.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-5.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-6.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-7.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-8.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item col-xs-4">
+                                                            <div class="overlay-container">
+                                                                <img src="{{asset('bundles/hub/images/gallery-9.jpg')}}" alt="">
+                                                                <a href="portfolio-item.html" class="overlay small">
+                                                                    <i class="fa fa-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-8">
+                                                <button type="submit" class="btn btn-default">Finish</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- main end -->
+
+                    </div>
+                </div>
+
+            </section>
+            <!-- main-container end -->
+
+        </div>
+        <!-- page-wrapper end -->
+    </body>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+Administration:
+    type: entity
+    table: administration
+    id:
+        idadministration:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idAdministration
+            generator:
+                strategy: IDENTITY
+    fields:
+        trial:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        paymentperiod:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: paymentPeriod
+        paymentbusiness:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: paymentBusiness
+        paymentprofessional:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: paymentProfessional
+    lifecycleCallbacks: {  }

@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>
+Saludando
+</title>
+<script>
+/*
+function descargaArchivo() {
+// Obtener la instancia del objeto XMLHttpRequest
+if(window.XMLHttpRequest) {
+peticion_http = new XMLHttpRequest();
+}
+else if(window.ActiveXObject) {
+peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+}
+// Preparar la funcion de respuesta
+peticion_http.onreadystatechange = muestraContenido;
+// Realizar peticion HTTP
+peticion_http.open('GET', 'http://localhost/symfony/web/app_dev.php/test', true);
+peticion_http.send(null);
+function muestraContenido() {
+if(peticion_http.readyState == 4) {
+if(peticion_http.status == 200) {
+//alert(peticion_http.responseText);
+var documento_xml = peticion_http.responseXML;
+var root = documento_xml.getElementsByTagName("respuesta")[0];
+var mensajes = root.getElementsByTagName("mensaje")[0];
+var mensaje = mensajes.firstChild.nodeValue;
+var parametros = root.getElementsByTagName("parametros")[0];
+var emitter = parametros.getElementsByTagName("emitter")[0].firstChild.nodeValue;
+document.getElementById("respuesta").innerHTML = emiter;
+
+}
+}
+}
+}
+window.onload = descargaArchivo;
+*/
+
+function iniciar(){
+cajadatos=document.getElementById('cajadatos');
+var archivos=document.getElementById('archivos');
+archivos.addEventListener('change', subir, false);
+}
+function subir(e){
+var archivos=e.target.files;
+var archivo=archivos[0];
+var datos=new FormData();
+datos.append('archivo',archivo);
+var url="/Proyecto/web/app_dev.php/test";
+var solicitud=new XMLHttpRequest();
+var xmlupload=solicitud.upload;
+xmlupload.addEventListener('loadstart',comenzar,false);
+xmlupload.addEventListener('progress',estado,false);
+xmlupload.addEventListener('load',mostrar,false);
+solicitud.open("POST", url, true);
+solicitud.send(datos);
+}
+function comenzar(){
+cajadatos.innerHTML='<progress value="0" max="100">0%</progress>';
+}
+function estado(e){
+if(e.lengthComputable){
+var por=parseInt(e.loaded/e.total*100);
+var barraprogreso=cajadatos.querySelector("progress");
+barraprogreso.value=por;
+barraprogreso.innerHTML=por+'%';
+}
+}
+function mostrar(e){
+cajadatos.innerHTML='Terminado';
+}
+window.addEventListener('load', iniciar, false);
+
+</script>
+</head>
+    <body>
+    <section id="cajaformulario">
+        <form name="formulario" enctype="multipart/form-data" method="post">
+            <p>Archivo a Subir:<br><input type="file" name="archivo"
+            id="archivos"></p>
+<input type="submit" value="send">
+        </form>
+    </section>
+    <section id="cajadatos"></section>
+    </body>
+</html>

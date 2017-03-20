@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Live Cropping Demo</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="iDea a Bootstrap-based, Responsive HTML5 Template">
+		<meta name="author" content="htmlcoder.me">
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{{asset('bundles/hub/images/favicon.ico')}}">
+
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap core CSS -->
+		<link href="{{asset('bundles/hub/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+
+		<!-- Font Awesome CSS -->
+		<link href="{{asset('bundles/hub/fonts/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+
+		<!-- Fontello CSS -->
+		<link href="{{asset('bundles/hub/fonts/fontello/css/fontello.css')}}" rel="stylesheet">
+
+		<!-- Plugins -->
+		<link href="{{asset('bundles/hub/plugins/rs-plugin/css/settings.css')}}" media="screen" rel="stylesheet">
+		<link href="{{asset('bundles/hub/plugins/rs-plugin/css/extralayers.css')}}" media="screen" rel="stylesheet">
+		<link href="{{asset('bundles/hub/plugins/magnific-popup/magnific-popup.css')}}" rel="stylesheet">
+		<link href="{{asset('bundles/hub/css/animations.css')}}" rel="stylesheet">
+		<link href="{{asset('bundles/hub/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet">
+
+		<!-- iDea core CSS file -->
+		<link href="{{asset('bundles/hub/css/style.css')}}" rel="stylesheet">
+
+		<!-- Color Scheme (In order to change the color scheme, replace the red.css with the color scheme that you prefer)-->
+               
+               <!-- <link href="{{asset('bundles/hub/css/skins/red.css')}}" rel="stylesheet"> -->
+              
+		<!-- Custom css -->
+		<link href="{{asset('bundles/hub/css/custom.css')}}" rel="stylesheet">
+  <script src="{{asset('bundles/hub/js/jquery.min.js')}}"></script>
+  <script src="{{asset('bundles/hub/js/jquery.Jcrop.js')}}"></script>
+  <link rel="stylesheet" href="{{asset('bundles/hub/css/jquery.Jcrop.css')}}" type="text/css" />
+
+<script type="text/javascript">
+
+  $(function(){
+
+    $('#cropbox').Jcrop({
+      aspectRatio: 1,
+      onSelect: updateCoords
+    });
+
+  });
+
+  function updateCoords(c)
+  {
+    $('#x').val(c.x);
+    $('#y').val(c.y);
+    $('#w').val(c.w);
+    $('#h').val(c.h);
+  };
+
+  function checkCoords()
+  {
+    if (parseInt($('#w').val())) return true;
+    alert('Please select a crop region then press submit.');
+    return false;
+  };
+
+</script>
+
+
+</head>
+<body>
+    <!-- This is the image we're attaching Jcrop to -->
+   
+            <label for="inputPhoto" data-animation-effect="fadeInLeft" data-effect-delay="300" class="col-sm-3 control-label">Photo<span class="text-danger small">*</span></label>
+           
+                <input type="file" onchange="ShowPhoto();" name="photo"  id="inputPhoto">
+                <img id="photoPerfil" style="display: none"  src="{{asset('bundles/hub/images/add-circle.png')}}">
+           
+        
+        <img src="{{asset('bundles/hub/images/add-circle.png')}}" id="cropbox" />
+
+        <!-- This is the form that our event handler fills -->
+        <form action="crop.php" method="post" onsubmit="return checkCoords();">
+                <input type="hidden" id="x" name="x" />
+                <input type="hidden" id="y" name="y" />
+                <input type="hidden" id="w" name="w" />
+                <input type="hidden" id="h" name="h" />
+                <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+        </form>
+        
+       
+        
+        <!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		
+		<script type="text/javascript" src="{{asset('bundles/hub/bootstrap/js/bootstrap.min.js')}}"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/modernizr.js')}}"></script>
+
+		<!-- jQuery REVOLUTION Slider  -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+
+		<!-- Isotope javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/isotope/isotope.pkgd.min.js')}}"></script>
+
+		<!-- Owl carousel javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/owl-carousel/owl.carousel.js')}}"></script>
+
+		<!-- Magnific Popup javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.appear.js')}}"></script>
+
+		<!-- Count To javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.countTo.js')}}"></script>
+
+		<!-- Parallax javascript -->
+		<script src="{{asset('bundles/hub/plugins/jquery.parallax-1.1.3.js')}}"></script>
+
+		<!-- Contact form -->
+		<script src="{{asset('bundles/hub/plugins/jquery.validate.js')}}"></script>
+
+		<!-- SmoothScroll javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.browser.js')}}"></script>
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/SmoothScroll.js')}}"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="{{asset('bundles/hub/js/template.js')}}"></script>
+
+		<!-- Custom Scripts -->
+		<script type="text/javascript" src="{{asset('bundles/hub/js/custom.js')}}"></script>
+</body>
+
+</html>

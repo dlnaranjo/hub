@@ -1,0 +1,85 @@
+{# empty Twig template #}
+{% extends 'head_Template.html.twig' %}
+
+{% block color %}
+     <link href="{{asset('bundles/hub/css/skins/pink.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+	<!-- body classes: 
+			"boxed": boxed layout mode e.g. <body class="boxed">
+			"pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+	-->
+	<body class="no-trans">
+
+		<!-- background image -->
+		
+
+		<!-- page wrapper start -->
+		<!-- ================ -->
+		<div class="page-wrapper">
+
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container">
+				
+				<div class="container">
+					<div class="row">
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="  col-md-8 col-md-offset-2">
+							<div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+								<div class="center-block">
+									<h2 class="title">Add your produts or service</h2>
+									<hr>
+                                                                        <form class="form-horizontal" role="form" enctype="multipart/form-data"  method="post" action="{{path('hub_addproduct_business')}}">
+									<div class="form-group has-feedback">
+                                                                            <label for="inputName"data-animation-effect="fadeInLeft" data-effect-delay="100" class="col-sm-3 control-label">Name <span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="100">
+                                                                                <input type="text"  style="border-color: #db7093" class="form-control" id="inputName"  name="name"  placeholder="Name" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group has-feedback">
+                                                                            <label for="inputDescription"data-animation-effect="fadeInLeft" data-effect-delay="150" class="col-sm-3 control-label">Description <span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="150">
+                                                                                 <input type="text"  style="border-color: #db7093" class="form-control" id="inputDescription"  name="description"  placeholder="Description" required>
+                                                                            </div>
+                                                                        </div>
+                                                                            
+                                                                        
+                                                                        <div class="form-group has-feedback">
+                                                                            <label for="inputPrice" data-animation-effect="fadeInLeft" data-effect-delay="200" class="col-sm-3 control-label">Price <span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="200">
+                                                                                <input type="text"  style="border-color: #db7093" class="form-control" id="inputPrice"  name="price"  placeholder="Price" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group has-feedback">
+                                                                            <label for="inputPhoto" data-animation-effect="fadeInLeft" data-effect-delay="300" class="col-sm-3 control-label">Photo<span class="text-danger small">*</span></label>
+                                                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="300">
+                                                                                <input type="file" onchange="ShowPhoto();" name="photo"  id="inputPhoto">
+                                                                                <img id="photoPerfil" style="display: none"  src="{{asset('bundles/hub/images/add-circle.png')}}">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                                <div class="col-sm-offset-3 col-sm-8">
+                                                                                    <button type="submit" class="btn btn-default">Next</button>
+                                                                                </div>
+                                                                        </div>
+									</form>
+								</div>
+							</div>
+
+						</div>
+						<!-- main end -->
+
+					</div>
+				</div>
+
+			</section>
+			<!-- main-container end -->
+
+		</div>
+		<!-- page-wrapper end -->
+	</body>
+{% endblock %}

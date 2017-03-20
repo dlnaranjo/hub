@@ -1,0 +1,347 @@
+{# empty Twig template #}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>The HUB | Front Page </title>
+		<meta name="description" content="iDea a Bootstrap-based, Responsive HTML5 Template">
+		<meta name="author" content="htmlcoder.me">
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{{asset('bundles/hub/images/favicon.ico')}}">
+
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap core CSS -->
+		<link href="{{asset('bundles/hub/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+
+		<!-- Font Awesome CSS -->
+		<link href="{{asset('bundles/hub/fonts/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+
+		<!-- Fontello CSS -->
+		<link href="{{asset('bundles/hub/fonts/fontello/css/fontello.css')}}" rel="stylesheet">
+
+		<!-- Plugins -->
+		<link href="{{asset('bundles/hub/css/animations.css')}}" rel="stylesheet">
+		<link href="{{asset('bundles/hub/plugins/jquery.countdown/jquery.countdown.css')}}" rel="stylesheet">
+
+		<!--Core CSS file -->
+		<link href="{{asset('bundles/hub/css/style.css')}}" rel="stylesheet">
+
+		<!-- Color Scheme (In order to change the color scheme, replace the red.css with the color scheme that you prefer)-->
+		          
+                <link href="{{asset('bundles/hub/css/skins/red.css')}}" rel="stylesheet">
+                
+
+		<!-- Custom css -->
+		<link href="{{asset('bundles/hub/css/custom.css')}}" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<!-- body classes: 
+			"boxed": boxed layout mode e.g. <body class="boxed">
+			"pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+	-->
+	<body class="no-trans">
+
+		<!-- background image -->
+		<div class="fullscreen-bg"></div>
+
+		<!-- page wrapper start -->
+		<!-- ================ -->
+		<div class="page-wrapper">
+
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class=" light-translucent-bg ">
+				
+				<!-- header start classes:					
+				================ -->                          
+                                 
+				<div class="header gray-bg header-small  clearfix fixed  text-center fadeInDownSmall uno " data-animation-effect="fadeInDawnSmall">                                   														
+					<div class="container ">
+						<div class="row">
+                                                    <div class="col-md-2">
+								<!-- logo -->
+                                                                <div class="logo" >
+									<a href=""><img id="logo" src="{{asset('bundles/hub/images/logo_red.png')}}" alt="iDea"></a>
+								</div>
+
+								<!-- name-and-slogan -->
+								<div class="site-slogan">
+									Connect &amp; Be Connected
+								</div>
+                                                    </div>
+                                                    <div class="col-md-9" > 
+                                                        <form method="post" action="{{path('login_check')}}" class="form-inline" role="form" style="margin: 0px!important">
+                                                                <div class="form-group has-feedback">
+                                                                    <div class="col-sm-11">
+                                                                            <input type="text" name="_username" class="form-control" id="inputUserName" placeholder="User Name" required>
+                                                                            <i class="fa fa-user form-control-feedback"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group has-feedback">
+                                                                        <div class="col-sm-11">
+                                                                                <input type="password" name="_password" class="form-control" id="inputPassword" placeholder="Password" required>
+                                                                                <i class="fa fa-lock form-control-feedback"></i>
+                                                                        </div>
+                                                                </div>														
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="_remember_me" /> Remember me
+									</label>
+								</div>
+								<button type="submit" class="btn spe btn-default">LOG IN</button>
+							</form>
+                                                        
+                                                    </div>
+						</div>
+                                            
+					</div>
+				</div>
+                                                                
+				<!-- header end -->                              
+				<div class="container">                                   
+                                        
+                                    <div class="row">
+
+                                        <!-- main start -->
+                                        <!-- ================ -->
+                                        <div class="main col-md-8 col-md-offset-2">
+
+                                            <div class="space"></div>
+                                                <div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+                                                    <div class="form-block center-block" >
+                                                                <h2 class="title">Account Sign Up - Choise Your Account Type</h2>
+                                                                <hr>
+                                                                <div class="tabs-style-2">
+                                                                <!-- Nav tabs -->
+                                                                <ul class="nav nav-tabs" role="tablist">
+                                                                    <li class="active"><a href="#h2tab1" id="prof" role="tab" data-toggle="tab"><i class="fa fa-user pr-5"></i>Professional</a></li>
+                                                                    <li id="bus1"><a href="#h2tab2" id="bus" data-toggle="tab"><i class="fa fa-bank pr-5"></i>Business</a></li>
+                                                                    <li><a href="#h2tab3" id="user"  role="tab" data-toggle="tab"><i class="fa fa-users pr-5"></i>User</a></li>
+                                                                </ul>
+                                                                <!-- Tab panes -->
+                                                                <div class="tab-content">
+                                                                        <div class="tab-pane fade in active" id="h2tab1">
+                                                                             <form class="form-horizontal" role="form">
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputName" class="col-sm-3 control-label">First Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputName" placeholder="First Name" required>
+                                                                                                <i class="fa fa-pencil form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputLastName" class="col-sm-3 control-label">Last Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+                                                                                                <i class="fa fa-pencil form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputUserName" class="col-sm-3 control-label">User Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
+                                                                                                <i class="fa fa-user form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputEmail" class="col-sm-3 control-label">Email <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                                                                                                <i class="fa fa-envelope form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputPassword" class="col-sm-3 control-label">Password <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                                                                                                <i class="fa fa-lock form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                                                <div class="checkbox">
+                                                                                                        <label>
+                                                                                                                <input type="checkbox" required> Accept our <a href="#">privacy policy</a> and <a href="#">customer agreement</a>
+                                                                                                        </label>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                                                <button  type="submit" class="btn btn-default">SIGN UP</button>
+                                                                                        </div>
+                                                                                </div>
+                                                                            </form>       
+                                                                        </div>
+                                                                        <div class="tab-pane fade" id="h2tab2">
+                                                                             <form class="form-horizontal" role="form">
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputName" class="col-sm-3 control-label">First Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputName" placeholder="First Name" required>
+                                                                                                <i class="fa fa-pencil form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputLastName" class="col-sm-3 control-label">Last Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+                                                                                                <i class="fa fa-pencil form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputUserName" class="col-sm-3 control-label">User Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
+                                                                                                <i class="fa fa-user form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputEmail" class="col-sm-3 control-label">Email <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                                                                                                <i class="fa fa-envelope form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputPassword" class="col-sm-3 control-label">Password <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                                                                                                <i class="fa fa-lock form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                                                <div class="checkbox">
+                                                                                                        <label>
+                                                                                                                <input type="checkbox" required> Accept our <a href="#">privacy policy</a> and <a href="#">customer agreement</a>
+                                                                                                        </label>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                                                <button  type="submit" class="btn btn-default">SIGN UP</button>
+                                                                                        </div>
+                                                                                </div>
+                                                                            </form>   
+
+                                                                        </div>
+                                                                        <div class="tab-pane fade" id="h2tab3">
+                                                                             <form class="form-horizontal" role="form">
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputName" class="col-sm-3 control-label">First Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputName" placeholder="First Name" required>
+                                                                                                <i class="fa fa-pencil form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputLastName" class="col-sm-3 control-label">Last Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+                                                                                                <i class="fa fa-pencil form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputUserName" class="col-sm-3 control-label">User Name <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
+                                                                                                <i class="fa fa-user form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputEmail" class="col-sm-3 control-label">Email <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                                                                                                <i class="fa fa-envelope form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group has-feedback">
+                                                                                        <label for="inputPassword" class="col-sm-3 control-label">Password <span class="text-danger small">*</span></label>
+                                                                                        <div class="col-sm-8">
+                                                                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                                                                                                <i class="fa fa-lock form-control-feedback"></i>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                                                <div class="checkbox">
+                                                                                                        <label>
+                                                                                                                <input type="checkbox" required> Accept our <a href="#">privacy policy</a> and <a href="#">customer agreement</a>
+                                                                                                        </label>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                        <div class="col-sm-offset-3 col-sm-8">
+                                                                                                <button  type="submit" class="btn btn-default">SIGN UP</button>
+                                                                                        </div>
+                                                                                </div>
+                                                                            </form>   
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <!-- tabs end -->
+
+                                                        </div>
+                                                </div>
+
+                                            </div>
+                                        <!-- main end -->
+
+                                        </div>
+                                    </div>
+
+			</section>
+			<!-- main-container end -->
+
+		</div>
+		<!-- page-wrapper end -->
+
+		<!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.js')}}"></script>
+		<script type="text/javascript" src="{{asset('bundles/hub/bootstrap/js/bootstrap.min.js')}}"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/modernizr.js')}}"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.appear.js')}}"></script>
+
+		<!-- Count Down javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.countdown/jquery.plugin.js')}}"></script>
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.countdown/jquery.countdown.js')}}"></script>
+		<script type="text/javascript" src="{{asset('bundles/hub/js/coming.soon.config.js')}}"></script>
+
+		<!-- SmoothScroll javascript -->
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/jquery.browser.js')}}"></script>
+		<script type="text/javascript" src="{{asset('bundles/hub/plugins/SmoothScroll.js')}}"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="{{asset('bundles/hub/js/template.js')}}"></script>
+
+		<!-- Custom Scripts -->
+		<script type="text/javascript" src="{{asset('bundles/hub/js/custom.js')}}"></script>
+
+	</body>
+</html>

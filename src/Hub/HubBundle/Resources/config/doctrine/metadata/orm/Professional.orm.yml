@@ -1,0 +1,116 @@
+Professional:
+    type: entity
+    table: professional
+    indexes:
+        FKProfession243105:
+            columns:
+                - user
+        FKProfession908926:
+            columns:
+                - idCategory
+    id: {  }
+    fields:
+        firstname:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: firstName
+        lastname:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: lastName
+        age:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        sex:
+            type: boolean
+            nullable: false
+        personalphone:
+            type: string
+            nullable: false
+            length: 15
+            options:
+                fixed: false
+            column: personalPhone
+        workphone:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+            column: workPhone
+        otherphone:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+            column: otherPhone
+        presentation:
+            type: text
+            nullable: false
+            length: null
+            options:
+                fixed: false
+        experience:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        curriculum:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        trial:
+            type: boolean
+            nullable: false
+    manyToOne:
+        idcategory:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idCategory:
+                    referencedColumnName: idCategory
+            orphanRemoval: false
+    oneToOne:
+        user:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user:
+                    referencedColumnName: user
+            orphanRemoval: false
+    manyToMany:
+        idprofession:
+            targetEntity: Profession
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: user
+            joinTable:
+                name: professional_profession
+                joinColumns:
+                    -
+                        name: user
+                        referencedColumnName: user
+                inverseJoinColumns:
+                    -
+                        name: idProfession
+                        referencedColumnName: idProfession
+            orderBy: null
+    lifecycleCallbacks: {  }

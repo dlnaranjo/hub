@@ -1,0 +1,42 @@
+Photo:
+    type: entity
+    table: photo
+    indexes:
+        FKPhoto898845:
+            columns:
+                - user
+    id:
+        idphoto:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idPhoto
+            generator:
+                strategy: IDENTITY
+    fields:
+        url:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        description:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+    manyToOne:
+        user:
+            targetEntity: Business
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user:
+                    referencedColumnName: user
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,328 @@
+{# empty Twig template #}
+{% extends 'head_Template.html.twig' %}
+
+{% block color %}
+     <link href="{{asset('bundles/hub/css/skins/red.css')}}" rel="stylesheet">
+{% endblock %}
+{% block head %}
+    {{parent()}}
+    <script  >
+    function submitForm(x){
+       
+        var u = document.getElementById('user' + x).value;
+        var mail = document.getElementById('email' + x).value;
+        var si = true;
+        var userInUse = false;
+        var emailInUse = false;
+        
+        {% for user in users %}
+            var e = '{{user.getUser()}}'; 
+            var ema = '{{user.getEmail()}}';
+            if (u === e) {
+                userInUse = true;
+                document.getElementById('user' + x + 'Error').style.display = 'inline';
+            }
+            if( mail === ema)
+                {
+               emailInUse = true;
+                document.getElementById('email' + x + 'Error').style.display = 'inline';
+                
+            }
+        {% endfor %}       
+          
+          if (!userInUse) {
+              document.getElementById('user' + x + 'Error').style.display = 'none';
+        }
+        if (!emailInUse) {
+              document.getElementById('email' + x + 'Error').style.display = 'none';
+        }
+         return !userInUse && !emailInUse ;      
+    }
+    
+    window.onload = function(){
+        intervalo = setInterval(mostrar, 1000);
+    };
+    function mostrar(){
+        //alert('paso');
+    };
+    
+    </script>
+{% endblock %}
+{% block content %}
+        <!-- body classes: 
+			"boxed": boxed layout mode e.g. <body class="boxed">
+			"pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+	-->
+        <body class="no-trans">
+            <!-- background image -->
+            <!--  -->
+            <!--<div class="fullscreen-bg"></div>
+            <!-- page wrapper start -->
+		<!-- ================ -->
+            <div class="page-wrapper">
+                <!-- main-container start -->
+                <!-- ================ -->
+                <section class="  ">
+                    <div class="container">  
+                        <div class="row">
+                            <!-- main start -->
+                            <!-- ================ -->
+                            <div class="col-sm-6 col-md-3 col-md-offset-1  object-non-visible" data-animation-effect="fadeIn" data-effect-delay="300">
+                                <div class="space"></div> <div class="space"></div>                             
+                                <div id="img_front" class="">
+                                         <div class="img_continuous col-md-6" data-animation-effect="fadeInLeft" data-effect-delay="100">
+                                             <img src="{{asset('bundles/hub/images/1.png')}}" alt="">
+                                             <a href="portfolio-item.html" class="overlay small">
+                                                     <i class="fa fa-link"></i>
+                                             </a>
+                                         </div>
+                                         <div class="img_continuous col-md-6" data-animation-effect="fadeInRight" data-effect-delay="200">
+                                             <img src="{{asset('bundles/hub/images/2.png')}}" alt="">
+                                             <a href="portfolio-item.html" class="overlay small">
+                                                     <i class="fa fa-link"></i>
+                                             </a>
+                                         </div>
+                                         <div class="img_continuous col-md-6" data-animation-effect="fadeInLeft" data-effect-delay="400">
+                                             <img src="{{asset('bundles/hub/images/3.png')}}" alt="">
+                                             <a href="portfolio-item.html" class="overlay small">
+                                                     <i class="fa fa-link"></i>
+                                             </a>
+                                         </div>
+                                         <div class="img_continuous col-md-6" data-animation-effect="fadeInRight" data-effect-delay="300">
+                                             <img src="{{asset('bundles/hub/images/4.png')}}" alt="">
+                                             <a href="portfolio-item.html" class="overlay small">
+                                                     <i class="fa fa-link"></i>
+                                             </a>
+                                         </div>                                                
+                                 </div>
+                                 
+                        </div>
+                            
+                            <div  class="col-md-6">
+                                <div class="space"></div>
+                                <div id="show_front" class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+                                    <div class=" " >
+                                        <h2 class="title text-center">Choose Your Account Type</h2>
+                                        <hr>
+                                        <div class="row">
+                            
+                                            <div id="div_professional" class="col-md-4">
+                                                    <h4 class="text-center">Professional</h4>
+                                                    <div  data-animation-effect="fadeInRight" data-effect-delay="200">
+                                                        <img onclick="loadForm('img_front', 'professional');" src="{{asset('bundles/hub/images/port1.png')}}" alt="" class="center-block" id="Image1" >
+                                                    </div>
+                                            </div>
+                                            <div id="div_business" class="col-md-4">
+                                                    <h4 class="text-center">Business</h4>
+                                                    <div  data-animation-effect="fadeInRight" data-effect-delay="300">
+                                                        <img onclick="loadForm('img_front', 'business');" src="{{asset('bundles/hub/images/port.png')}}" alt="" class="center-block" id="Image2" onMouseOver="MM_swapImage('Image2','','images/swap_purple.jpg',1);" onMouseOut="MM_swapImgRestore()">
+                                                    </div>
+                                            </div>                                            
+                                            <div id="div_user" class="col-md-4">
+                                                    <h4 class="text-center">User</h4>
+                                                    <div  data-animation-effect="fadeInRight" data-effect-delay="400">
+                                                        <img onclick="loadForm('img_front', 'user');"  src="{{asset('bundles/hub/images/port3.png')}}" alt="" class="center-block" id="Image3" onMouseOver="MM_swapImage('Image4','','images/swap_blue.jpg',1);" onMouseOut="MM_swapImgRestore()">
+                                                    </div>
+                                            </div>
+                                    </div>
+                                                   
+                                    </div>
+                                                    
+                                </div>
+                                    <div class="space"></div>                
+                            </div>
+                            <div id="form_professional" class=" col-md-6" style="display: none;">
+                                    <div class="space"></div>
+                                <div class="" >
+                                    <form id="formProfessional"  class="form-horizontal" onsubmit="return submitForm('Professional');" role="form" method="post" action="{{path('hub_signup_professional1')}}">
+                                    <div class="form-group has-feedback">
+                                            <label for="inputFirstName" class="col-sm-3 control-label">First Name <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="text"  style="border-color: #ffa500" class="form-control" name="firstname" id="firstNameProfessional" placeholder="First Name" required>
+                                                    <i class="fa fa-pencil form-control-feedback" style="color: #ffa500 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputLastName" class="col-sm-3 control-label">Last Name <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                    <input type="text" style="border-color: #ffa500" class="form-control" name="lastname"  id="lastNameProfessional" placeholder="Last Name" required>
+                                                    <i class="fa fa-pencil form-control-feedback"style="color: #ffa500 "></i>
+                                            </div>
+                                    </div>                                 
+                                    <div class="form-group has-feedback">
+                                            <label for="inputUsername" class="col-sm-3 control-label">Username <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                    <label id="userProfessionalError" style="color: red; display: none;" >This user is already in use. Enter a new one.</label>   
+                                                    <input type="text" style="border-color: #ffa500"class="form-control"  name="user"  id="userProfessional" placeholder="Username" required>
+                                                    <i class="fa fa-user form-control-feedback"style="color: #ffa500 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputEmail" class="col-sm-3 control-label">Email<span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                    <label id="emailProfessionalError" style="color: red; display: none;" >This email is already in use. Enter a new one.</label>
+                                                    <input type="email" style="border-color: #ffa500" class="form-control"  name="email" id="emailProfessional" placeholder="Email" required>
+                                                    <i class="fa fa-envelope form-control-feedback"style="color: #ffa500 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputPassword" class="col-sm-3 control-label">Password <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                    <input type="password" style="border-color: #ffa500" class="form-control"  name="password" id="passwordProfessional" placeholder="Password" required>
+                                                    <i class="fa fa-lock form-control-feedback"style="color: #ffa500 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="confirmPassword" class="col-sm-3 control-label">Confirm <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                    <input type="password" style="border-color: #ffa500" class="form-control"  name="confirm"  id="confirmPasswordProfessional" placeholder="Password" required>
+                                                    <i class="fa fa-lock form-control-feedback"style="color: #ffa500 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-8">
+                                                <div class="checkbox">
+                                                        <label>
+                                                            <input name="policy" type="checkbox" required> Accept our <a href="#" style="color:#ffa500">privacy policy</a> and <a href="#"style="color:#ffa500 " >customer agreement</a>
+                                                        </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-8">
+                                                <button    type="submit" class="btn btn-professional">NEXT</button>
+                                            </div>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                            <div id="form_business" class=" col-md-6" style="display: none;">
+                                    <div class="space"></div>
+                                    <div class=""  >
+                                <form class="form-horizontal" role="form"  method="post" onsubmit="//return submitForm('Business');" action="{{path('hub_signup_business1')}}">
+                                    
+                                    <div class="form-group has-feedback">
+                                            <label for="inputName" class="col-sm-3 control-label">Name <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="text" style="border-color: #db7093" class="form-control" id="inputName" name="namebusiness" placeholder="Name" required>
+                                                <i class="fa fa-pencil form-control-feedback" style="color: #db7093" ></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputUsername" class="col-sm-3 control-label">Username<span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="text" style="border-color: #db7093" class="form-control" id="inputUsername" name="user" placeholder="Username" required>
+                                                    <i class="fa fa-user form-control-feedback" style="color: #db7093"></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputEmail"  class="col-sm-3 control-label">Email <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="email" style="border-color: #db7093" class="form-control" id="inputEmail" name="email" placeholder="Email" required>
+                                                    <i class="fa fa-envelope form-control-feedback" style="color: #db7093"  ></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputPassword" class="col-sm-3 control-label">Password <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="password" style="border-color: #db7093" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
+                                                    <i class="fa fa-lock form-control-feedback" style="color: #db7093"></i>
+                                            </div>
+                                    </div>
+                                     <div class="form-group has-feedback">
+                                            <label for="confirmPassword" class="col-sm-3 control-label">Confirm <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="password" style="border-color: #db7093" class="form-control" id="confirmPassword" name="confirm" placeholder="Password" required>
+                                                    <i class="fa fa-lock form-control-feedback"style="color: #db7093 "></i>
+                                            </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-8">
+                                                <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" required> Accept our <a href="#" style="color:#db7093">privacy policy</a> and <a href="#"style="color:#db7093" >customer agreement</a>
+                                                        </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-8">
+                                                    <button  type="submit" class="btn btn-business">NEXT</button>
+                                            </div>
+                                    </div>
+                                </form>
+                                </div>
+                                    </div>
+                                    <div id="form_user" class=" col-md-6" style="display: none;">
+                                    <div class="space"></div>
+                                <div class="" >
+                                    <form class="form-horizontal" id="formUser" role="form" method="post" onsubmit="//return submitForm('User');" action="{{path('hub_signup_user1')}}">
+                                    <div class="form-group has-feedback">
+                                            <label for="inputName" class="col-sm-3 control-label">First Name <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="text" style="border-color: #3d78d8" class="form-control" id="inputName" name="firstname" placeholder="First Name" required>
+                                                    <i class="fa fa-pencil form-control-feedback"style="color: #3d78d8 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputLastName" class="col-sm-3 control-label">Last Name <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="text" style="border-color: #3d78d8"class="form-control" id="inputLastName" name="lastname" placeholder="Last Name" required>
+                                                    <i class="fa fa-pencil form-control-feedback"style="color: #3d78d8 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputUsername" class="col-sm-3 control-label">User Name <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="text"style="border-color: #3d78d8" class="form-control" id="inputUsername" name="user" placeholder="Username" required>
+                                                    <i class="fa fa-user form-control-feedback"style="color: #3d78d8 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputEmail" class="col-sm-3 control-label">Email <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="email" style="border-color: #3d78d8"class="form-control" id="inputEmail" name="email" placeholder="Email" required>
+                                                    <i class="fa fa-envelope form-control-feedback"style="color: #3d78d8 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="inputPassword" class="col-sm-3 control-label">Password <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="password"style="border-color: #3d78d8" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
+                                                    <i class="fa fa-lock form-control-feedback"style="color: #3d78d8 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                            <label for="confirmPassword" class="col-sm-3 control-label">Confirm <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input type="password" style="border-color: #3d78d8" class="form-control" id="confirmPassword" name="confirm" placeholder="Password" required>
+                                                    <i class="fa fa-lock form-control-feedback"style="color: #3d78d8 "></i>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-8">
+                                                <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" required> Accept our <a href="#" style="color:#3d78d8">privacy policy</a> and <a href="#"style="color:#3d78d8" >customer agreement</a>
+                                                        </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-8">
+                                                    <button  type="submit" class="btn btn-user">NEXT</button>
+                                            </div>
+                                    </div>
+                                </form>
+                                
+                            </div>                            
+                        </div> 
+                        </div>                             
+                    </div>
+                </section>
+            </div>               
+            <!-- page-wrapper end -->
+		        
+        </body>
+{% endblock %}
+

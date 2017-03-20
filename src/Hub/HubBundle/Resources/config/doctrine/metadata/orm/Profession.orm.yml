@@ -1,0 +1,37 @@
+Profession:
+    type: entity
+    table: profession
+    id:
+        idprofession:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idProfession
+            generator:
+                strategy: IDENTITY
+    fields:
+        professionname:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: professionName
+        description:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    manyToMany:
+        user:
+            targetEntity: Professional
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: idprofession
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

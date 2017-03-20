@@ -1,0 +1,117 @@
+{# empty Twig template #}
+<!-- header start classes:
+    fixed: fixed navigation mode (sticky menu) e.g. <header class="header fixed clearfix">
+     dark: dark header version e.g. <header class="header dark clearfix">
+================ -->
+<header class="header fixed clearfix">
+    <div class="container">
+            <div class="row">
+                    <div class="col-md-3">
+
+                            <!-- header-left start -->
+                            <!-- ================ -->
+                            <div class="header-left clearfix">
+
+                                    <!-- logo -->
+                                    <div class="logo">
+                                            <a href=""><img id="logo" src="{{asset('bundles/hub/images/logo_red.png')}}" alt="iDea"></a>
+                                    </div>
+
+                                    <!-- name-and-slogan -->
+                                    <div class="site-slogan">
+                                            Connect &amp; Be Connected 
+                                    </div>
+
+                            </div>
+                            <!-- header-left end -->
+
+                    </div>
+                    <div class="col-md-9">
+
+                            <!-- header-right start -->
+                            <!-- ================ -->
+                            <div class="header-right clearfix">
+
+                                    <!-- main-navigation start -->
+                                    <!-- ================ -->
+                                    <div class="main-navigation animated">
+
+                                            <!-- navbar start -->
+                                            <!-- ================ -->
+                                            <nav class="navbar navbar-default" role="navigation">
+                                                    <div class="container-fluid">
+
+                                                            <!-- Toggle get grouped for better mobile display -->
+                                                            <div class="navbar-header">
+                                                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                                                            <span class="sr-only">Toggle navigation</span>
+                                                                            <span class="icon-bar"></span>
+                                                                            <span class="icon-bar"></span>
+                                                                            <span class="icon-bar"></span>
+                                                                    </button>
+                                                            </div>
+
+                                                            <!-- Collect the nav links, forms, and other content for toggling -->
+                                                            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                                                    <ul class="nav navbar-nav navbar-right">
+                                                                            <li class="dropdown active">
+                                                                                    <a href="{{path('hub_homepage')}}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                                                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                                                                        <ul class="dropdown-menu">
+                                                                                            <li class="active"><a href="{{path("hub_index_professional")}}">Index Professional</a></li>
+                                                                                            <li><a href="{{path("hub_index_business")}}">Index business</a></li>
+                                                                                            <li><a href="">Index user</a></li>
+                                                                                           
+                                                                                        </ul>
+                                                                                    {% endif %}
+                                                                                    
+                                                                            </li>
+                                                                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                                                            <li class="dropdown">
+                                                                                    <a href="{{path('hub_list_professional')}}" class="dropdown-toggle" data-toggle="dropdown">Professionals</a>
+                                                                                    <!--  <ul class="dropdown-menu">
+                                                                                          <li class="dropdown">
+                                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Email Templates <span class="default-bg badge">v1.1</span></a>
+                                                                                                    <ul class="dropdown-menu">
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_red.html">Email Template Red</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_blue.html">Email Template Blue</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_brown.html">Email Template Brown</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_dark_cyan.html">Email Template Dark Cyan</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_dark_gray.html">Email Template Dark Gray</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_dark_red.html">Email Template Dark Red</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_green.html">Email Template Green</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_light_blue.html">Email Template Light Blue</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_light_green.html">Email Template Light Green</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_orange.html">Email Template Orange</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_pink.html">Email Template Pink</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_purple.html">Email Template Purple</a></li>
+                                                                                                            <li><a target="_blank" href="../email_templates/email_template_yellow.html">Email Template Yellow</a></li>
+                                                                                                    </ul>
+                                                                                            </li>
+                                                                                            
+                                                                                    </ul>-->
+                                                                            </li>
+                                                                            <li class="dropdown">
+                                                                                    <a href="{{path('hub_list_business')}}" class="dropdown-toggle" data-toggle="dropdown">Business</a>
+                                                                            </li>
+                                                                             <li class="dropdown">
+                                                                                    <a href="{{path('hub_list_product_business')}}" class="dropdown-toggle" data-toggle="dropdown">Products And Service</a>
+                                                                            </li>
+                                                                            {% endif %}
+                                                            </div>
+
+                                                    </div>
+                                            </nav>
+                                            <!-- navbar end -->
+
+                                    </div>
+                                    <!-- main-navigation end -->
+
+                            </div>
+                            <!-- header-right end -->
+
+                    </div>
+            </div>
+    </div>
+</header>
+<!-- header end -->

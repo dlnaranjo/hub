@@ -1,0 +1,122 @@
+hub_homepage:
+    path:     /
+    defaults: { _controller: HubBundle:Default:index }
+    
+hub_signup:
+    path:   /signup
+    defaults: {_controller: HubBundle:Default:signup}
+
+hub_login:
+    path:   /login
+    defaults: {_controller: HubBundle:Default:login}
+
+hub_login_check:
+    path: /login_check
+
+hub_signup_professional1:
+    path:   /signup_professional1
+    defaults: {_controller: HubBundle:Professional:signup_professional1}
+
+hub_signup_professional2:
+    path:   /signup_professional2
+    defaults: {_controller: HubBundle:Professional:signup_professional2}
+    
+hub_signup_professional3:
+    path:   /signup_professional3
+    defaults: {_controller: HubBundle:Professional:signup_professional3}
+    
+hub_signup_professional4:
+    path:   /signup_professional4
+    defaults: {_controller: HubBundle:Professional:signup_professional4}
+    
+hub_signup_professional_finish:
+    path:   /signup_professional_finish
+    defaults: {_controller: HubBundle:Professional:signup_professional_finish}
+
+hub_index_professional:
+    path:   /professional/index_professional
+    defaults: {_controller: HubBundle:Professional:index_professional}
+    
+hub_signup_business1:
+    path:   /signup_business1
+    defaults: {_controller: HubBundle:Business:signup_business1}
+
+hub_signup_business2:
+    path:   /signup_business2
+    defaults: {_controller: HubBundle:Business:signup_business2}
+    
+hub_signup_business3:
+    path:   /signup_business3
+    defaults: {_controller: HubBundle:Business:signup_business3}
+    
+hub_signup_business_finish:
+    path:   /signup_business_finish
+    defaults: {_controller: HubBundle:Business:signup_business_finish}
+
+hub_index_business:
+    path:   /index_business
+    defaults: {_controller: HubBundle:Business:index_business}
+    
+hub_list_business:
+    path:   /list_business/{page}
+    defaults: {_controller: HubBundle:Business:list_business, page:1}
+    
+hub_show_business:
+    path:   /show_business/{user}
+    defaults: {_controller: HubBundle:Default:show_business,user:1}
+
+hub_addproduct_business:
+    path:   /addproduct
+    defaults: {_controller: HubBundle:Business:addProduct}
+    
+hub_list_product_business:
+    path:   /listproduct/{page}
+    defaults: {_controller: HubBundle:Business:listBusinessProducts, page:1}
+
+hub_list_my_product_business:
+    path:   /mylistproduct/{page}
+    defaults: {_controller: HubBundle:Business:listMyBusinessProducts, page:1}
+    
+hub_signup_user1:
+    path:   /signup_user1
+    defaults: {_controller: HubBundle:User:signup_user1}
+    
+hub_signup_user_finish:
+    path:   /signup_user_finish
+    defaults: {_controller: HubBundle:User:index_user}
+    
+hub_index_user:
+    path:   /index_user
+    defaults: {_controller: HubBundle:User:index_user2}
+    
+hub_show_professional:
+    path:   /show_professional/{user}
+    defaults: {_controller: HubBundle:Professional:show_professional,user:1}
+    
+hub_list_professional:
+    path:   /list_professional/{page}
+    defaults: {_controller: HubBundle:Professional:list_professional, page:1}
+    
+hub_logout:
+    path:   /logout
+    
+hub_ajax:
+    path:   /ajax
+    defaults: {_controller: HubBundle:Ajax:createNotification}
+
+hub_ajax_notification:
+    path:   /new_notification
+    defaults: {_controller: HubBundle:Ajax:newNotification}
+
+hub_test:
+    path:   /test
+    defaults: {_controller: HubBundle:Ajax:test2}
+
+
+hub_test3:
+    path:   /test3
+    defaults: {_controller: HubBundle:Default:test3}
+
+hub_image_cropping:    
+    path:   /cropping
+    defaults: {_controller: HubBundle:Ajax:imageCrop}

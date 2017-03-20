@@ -1,0 +1,139 @@
+{% extends 'head_Template.html.twig' %}
+
+{% block color %}
+    <meta charset="utf-8">
+    <link href="{{asset('bundles/hub/css/skins/pink.css')}}" rel="stylesheet">
+    <link href="{{asset('bundles/hub/css/jquery.Jcrop.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    <!-- body classes: 
+                    "boxed": boxed layout mode e.g. <body class="boxed">
+                    "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+    -->
+    <body class="no-trans">
+
+        <!-- background image -->
+
+
+        <!-- page wrapper start -->
+        <!-- ================ -->
+        <div class="page-wrapper">
+
+            <!-- main-container start -->
+            <!-- ================ -->
+            <section class="main-container">
+
+                <div class="container">
+                    <div class="row">
+
+                        <!-- main start -->
+                        <!-- ================ -->
+                        <div class="  col-md-8 col-md-offset-2">
+                            <div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+                                <div class="center-block">
+                                    <h2 class="title">Business Sign Up</h2>
+                                    <hr>
+                                    <form class="form-horizontal" role="form" method="post" action="{{path('hub_signup_business_finish')}}">
+                                        <div class="form-group has-feedback">
+                                            <label for="inputCountry"data-animation-effect="fadeInLeft" data-effect-delay="100" class="col-sm-3 control-label">Country <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="100">
+                                                <select style="border-color: #db7093" class="form-control" id="inputCountry" name="country" placeholder="Country" required>
+                                                    <option>--Select country--</option>  
+                                                    <option>Cuba</option>
+                                                    <option>EEUU</option>
+                                                    <option>Canada</option>                                                                                    
+                                                    <option>Venezuela</option>
+                                                    <option>Mexico</option>
+                                                    <option>Nicaragua</option>
+                                                    <option>Panama</option>
+                                                    <option>Brasil</option>
+                                                    <option>Colombia</option>                                                                                               
+                                                    <option>El Salvador</option>
+                                                    <option>Chile</option>
+                                                    <option>Argentina</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <label for="inputCity"data-animation-effect="fadeInLeft" data-effect-delay="150" class="col-sm-3 control-label">City <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="150">
+                                                <input type="text"  style="border-color: #db7093" class="form-control" id="inputCity"  name="city"  placeholder="City" required>
+                                            </div>
+                                        </div>                                                                   
+                                        <div class="form-group has-feedback">
+                                            <label for="inputAddress"data-animation-effect="fadeInLeft" data-effect-delay="200" class="col-sm-3 control-label">Address <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="200">
+                                                <input type="text"  style="border-color: #db7093" class="form-control" id="inputAddress" name="address" placeholder="Address" required>
+                                                <i class="fa fa-pencil form-control-feedback" style="color: #db7093 "></i>
+                                            </div>
+                                        </div>                                                                       
+                                        <div class="form-group has-feedback">
+                                            <label for="inputCategory"data-animation-effect="fadeInLeft" data-effect-delay="300" class="col-sm-3 control-label">Category <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="300">
+                                                <select style="border-color: #db7093" class="form-control" id="inputCategory" name="category" placeholder="Category" required>
+                                                    <option>--Select category--</option> 
+                                                    {% for category in categories %}
+                                                        <option  value="{{category.getIdcategory()}}">{{category.getCategoryName()}}</option>
+                                                    {% endfor %}
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group has-feedback">
+                                            <label for="inputLanguage"data-animation-effect="fadeInLeft" data-effect-delay="250" class="col-sm-3 control-label">Language <span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8" data-animation-effect="fadeInRight" data-effect-delay="250">
+                                                <select style="border-color: #db7093" class="form-control" id="inputLanguage" name="language" placeholder="Language" required>
+                                                    <option>--Select the language that you prefer--</option>    
+                                                    <option>English</option>
+                                                    <option>Español</option>
+                                                    <option>Deutcsh</option>
+                                                    <option>Français</option>
+                                                    <option>Italiano</option>
+                                                    <option>Português</option>
+                                                    <option>Polski</option>
+                                                    <option>Afrikaans</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <label for="inputPhoto" data-animation-effect="fadeInLeft" data-effect-delay="300" class="col-sm-3 control-label">Photo<span class="text-danger small">*</span></label>
+                                            <div class="col-sm-8"data-animation-effect="fadeInRight" data-effect-delay="300">
+                                                <input type="text"  style="border-color: #db7093" class="form-control" id="cropped_photo" name="photo"  placeholder="Photo" required readonly="true">
+                                                <button class="btn btn-default btn-group-justified" data-toggle="modal" data-target="#myModal">Load</button>    
+                                                <img id="photoPerfil" style="display: inline"  src="">
+                                            </div>                                           
+
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-8">
+                                                <button type="submit" class="btn btn-default">Finish</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- main end -->
+
+                    </div>
+                </div>
+
+            </section>
+            <!-- main-container end -->
+
+        </div>
+       {% include 'default/cropping_form.html.twig' %}
+    </body>
+{% endblock %}
+
+{% block javascript_jcrop  %}
+
+    <script src="{{asset('bundles/hub/js/jquery.Jcrop.js')}}" type="text/javascript"></script>
+
+    <script  src="{{asset('bundles/hub/js/cropping_form.js')}}"type="text/javascript"></script>
+{% endblock %}
